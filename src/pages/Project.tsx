@@ -3,60 +3,60 @@ import React from 'react';
 const Projects: React.FC = () => {
   const projects = [
     {
-      title: "Portfolio Website",
-      description: "Creative portfolio design for a photography studio with smooth animations, gallery management, and contact integration.",
-      category: "Web Development",
-      image: "/assets/portfolio1.png",
-      technologies: ["HTML", "CSS", "JavaScript"],
-      liveLink: "http://localhost:63343/5/My-Personal-Portfolio/index.html?_ijt=u4iskmh8fg9jjfevj5p6g7rgpa&_ij_reload=RELOAD_ON_SAVE",
-      githubLink: "https://github.com/Tashini4/My-Personal-Portfolio"
-    },
-    {
-      title: "Portfolio Website",
-      description: "Creative portfolio design for a photography studio with smooth animations, gallery management, and contact integration.",
-      category: "Web Development",
-      image: "/assets/portfolio2.png",
-      technologies: ["Figma", "React", "TypeScript", "Tailwind CSS"],
-      liveLink: "#",
-      githubLink: "https://github.com/Tashini4/React-Portfolio"
-    },
-    {
-      title: "Salon Appointment Booking System",
-      description: "Salon appointment booking system supports user - login, appointment, and email notification. SpringBoot, MySQL Server and Bootstrap are used for this. ",
-      category: "full-stack Development",
-      image: "/assets/salon.png",
-      technologies: ["Springboot", "MySQL", "Bootstrap"],
-      liveLink: "#",
-      githubLink: "https://github.com/Tashini4/E-Commerce-Web-Application"
-    },
-    {
-      title: "Book Club Web Application",
-      description: "Book club web application built with React, TypeScript, MongoDB, Express, Node. Js , node mailer, provides a clean and user friendly interface. ",
-      category: "Web Application",
-      image: "/assets/book.png",
-      technologies: ["React", "MongoDB", "Node.js", "TypeScript","Tailwindcss","Express"],
-      liveLink: "#",
-      githubLink: "https://github.com/Tashini4/library_frontend"
-    },
-    {
-      title: "Mobile RecipeMate App",
-      description: "Cross-platform fitness application with workout tracking, progress analytics, and community features.",
-      category: "Mobile Development",
-      image: "/assets/mobile.png",
-      technologies: ["React Native", "Firebase", "Redux", "Expo"],
-      liveLink: "#",
-      githubLink: "#"
-    },
-     {
-      title: "Travel-Destination-Gallery",
-      description: "React travel Destination gallery website .tech stack github action and netlify",
-      category: "Web Development",
-      image: "/assets/travel.png",
-      technologies: ["React", "TypeScript", "Tailwind CSS"],
-      liveLink: "#",
-      githubLink: "https://github.com/Tashini4/Travel-Destination-Gallery"
-    }
-  ];
+    title: "Portfolio Website",
+    description: "A responsive personal portfolio website showcasing my projects and skills, built with pure HTML, CSS, and JavaScript for optimal performance and cross-browser compatibility.",
+    category: "Web Development",
+    image: "/assets/portfolio1.png",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    liveLink: "http://localhost:63343/5/My-Personal-Portfolio/index.html?_ijt=u4iskmh8fg9jjfevj5p6g7rgpa&_ij_reload=RELOAD_ON_SAVE",
+    githubLink: "https://github.com/Tashini4/My-Personal-Portfolio"
+  },
+  {
+    title: "Portfolio Website",
+    description: "Modern and interactive portfolio built with React and TypeScript, featuring smooth animations, responsive design, and enhanced user experience with Tailwind CSS styling.",
+    category: "Web Development",
+    image: "/assets/portfolio2.png",
+    technologies: ["Figma", "React", "TypeScript", "Tailwind CSS"],
+    liveLink: "#",
+    githubLink: "https://github.com/Tashini4/React-Portfolio"
+  },
+  {
+    title: "Salon Appointment Booking System",
+    description: "Full-stack salon management system with user authentication, appointment scheduling, and automated email notifications using Spring Boot, MySQL, and Bootstrap for responsive UI.",
+    category: "full-stack Development",
+    image: "/assets/salon.png",
+    technologies: ["Springboot", "MySQL", "Bootstrap"],
+    liveLink: "#",
+    githubLink: "https://github.com/Tashini4/E-Commerce-Web-Application"
+  },
+  {
+    title: "Book Club Web Application",
+    description: "Full-stack book sharing platform with user authentication, book management, and community features built using MERN stack with TypeScript and Tailwind CSS for modern UI.",
+    category: "Web Application",
+    image: "/assets/book.png",
+    technologies: ["React", "MongoDB", "Node.js", "TypeScript","Tailwindcss","Express"],
+    liveLink: "#",
+    githubLink: "https://github.com/Tashini4/library_frontend"
+  },
+  {
+    title: "Mobile RecipeMate App",
+    description: "Cross-platform recipe application with ingredient tracking, step-by-step cooking instructions, and personalized recipe recommendations using React Native and Firebase.",
+    category: "Mobile Development",
+    image: "/assets/mobile.png",
+    technologies: ["React Native", "Firebase", "Redux", "Expo"],
+    liveLink: "#",
+    githubLink: "#"
+  },
+  {
+    title: "Travel-Destination-Gallery",
+    description: "Interactive travel gallery website showcasing beautiful destinations with filtering capabilities, built with React and TypeScript, deployed using GitHub Actions and Netlify.",
+    category: "Web Development",
+    image: "/assets/travel.png",
+    technologies: ["React", "TypeScript", "Tailwind CSS"],
+    liveLink: "#",
+    githubLink: "https://github.com/Tashini4/Travel-Destination-Gallery"
+  }
+];
 
   const categories = ["All", "Web Development", "UI/UX Design", "Frontend Development", "Full Stack", "Mobile Development"];
 
@@ -167,21 +167,6 @@ const Projects: React.FC = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* CTA Section */}
-        <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-purple-900/20 via-pink-900/20 to-blue-900/20 rounded-2xl p-8 border border-gray-800">
-            <h2 className="text-3xl font-bold text-white mb-4">
-              Interested in working together?
-            </h2>
-            <p className="text-gray-300 text-lg mb-6 max-w-2xl mx-auto">
-              I'm always excited to take on new challenges and bring innovative ideas to life.
-            </p>
-            <button className="px-8 py-3 bg-gradient-to-r from-purple-600 via-pink-500 to-blue-500 text-white font-semibold rounded-full hover:from-purple-700 hover:via-pink-600 hover:to-blue-600 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl shadow-lg">
-              Start a Project
-            </button>
-          </div>
         </div>
       </div>
 
