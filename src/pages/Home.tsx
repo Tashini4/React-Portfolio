@@ -9,6 +9,7 @@ const Homepage: React.FC = () => {
   const [roleIndex, setRoleIndex] = useState(0);
   
   const fullText = "Hi, I'm Tashini Madubhani Wijethunga";
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const roles = [
     "UI/UX Designer",
     "Web Developer", 
@@ -48,33 +49,12 @@ const Homepage: React.FC = () => {
     }
   }, [roleIndex, currentRole, currentIndex, roles]);
 
-  const socialIcons = [
-      { 
-        icon: <FaGithub />, 
-        name: 'GitHub', 
-        href: 'https://github.com/Tashini4',
-        hoverColor: 'hover:text-purple-400'
-      },
-      { 
-        icon: <FaLinkedin />, 
-        name: 'LinkedIn', 
-        href: 'https://www.linkedin.com/in/tashini-wijethunga-9474b02b2/',
-        hoverColor: 'hover:text-blue-400'
-      },
-      { 
-        icon: <FaFacebook />, 
-        name: 'Facebook', 
-        href: 'https://www.facebook.com/share/1FkTevPvbU/',
-        hoverColor: 'hover:text-blue-500'
-      },
-      
-      { 
-        icon: <FaInstagram />, 
-        name: 'Instagram', 
-        href: 'https://www.instagram.com/_tashimadu_?igsh=NngxMjdkZzQ3eDYw',
-        hoverColor: 'hover:text-pink-500'
-      },
-    ];
+   const socialIcons = [
+    { icon: <FaGithub />, name: 'GitHub', href: 'https://github.com/Tashini4' },
+    { icon: <FaLinkedin />, name: 'LinkedIn', href: 'https://www.linkedin.com/in/tashini-wijethunga-9474b02b2/' },
+    { icon: <FaFacebook />, name: 'Facebook', href: 'https://www.facebook.com/share/1FkTevPvbU/' },
+    { icon: <FaInstagram />, name: 'Instagram', href: 'https://www.instagram.com/_tashimadu_?igsh=NngxMjdkZzQ3eDYw' }
+  ];
 
   return (
     <div className="min-h-screen relative overflow-hidden bg-black">
@@ -127,12 +107,12 @@ const Homepage: React.FC = () => {
             </div>
           </div>
 
-          {/* Social Icons - Using Icon8 React Icons */}
+          {/* Social Icons */}
           <div className="flex justify-center space-x-8 mb-8">
             {socialIcons.map((social, index) => (
               <a
                 key={index}
-                href="#"
+                href={social.href}
                 className="text-white hover:text-purple-300 transition-all duration-300 transform hover:scale-110 hover:rotate-12"
               >
                 <div className="text-4xl md:text-5xl lg:text-6xl">

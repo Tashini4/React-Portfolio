@@ -3,58 +3,58 @@ import React from 'react';
 const Projects: React.FC = () => {
   const projects = [
     {
-      title: "E-commerce Website",
-      description: "Developed a web application with features to view products, add to cart and place orders. Developed using Hibernate, JPA, Java 17, Maven, MySQL.",
+      title: "Portfolio Website",
+      description: "Creative portfolio design for a photography studio with smooth animations, gallery management, and contact integration.",
       category: "Web Development",
-      image: "/api/placeholder/400/250",
-      technologies: ["Springboot", "Hibernate", "JPA", "Java17", "Maven", "MySQL"],
-      liveLink: "#",
-      githubLink: "#"
+      image: "/assets/portfolio1.png",
+      technologies: ["HTML", "CSS", "JavaScript"],
+      liveLink: "http://localhost:63343/5/My-Personal-Portfolio/index.html?_ijt=u4iskmh8fg9jjfevj5p6g7rgpa&_ij_reload=RELOAD_ON_SAVE",
+      githubLink: "https://github.com/Tashini4/My-Personal-Portfolio"
     },
     {
       title: "Portfolio Website",
       description: "Creative portfolio design for a photography studio with smooth animations, gallery management, and contact integration.",
       category: "Web Development",
-      image: "/api/placeholder/400/250",
+      image: "/assets/portfolio2.png",
       technologies: ["Figma", "React", "TypeScript", "Tailwind CSS"],
       liveLink: "#",
-      githubLink: "#"
+      githubLink: "https://github.com/Tashini4/React-Portfolio"
     },
     {
-      title: "Task Management App",
-      description: "Productive task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-      category: "Frontend Development",
-      image: "/api/placeholder/400/250",
-      technologies: ["React", "Redux", "Firebase", "Material-UI"],
+      title: "Salon Appointment Booking System",
+      description: "Salon appointment booking system supports user - login, appointment, and email notification. SpringBoot, MySQL Server and Bootstrap are used for this. ",
+      category: "full-stack Development",
+      image: "/assets/salon.png",
+      technologies: ["Springboot", "MySQL", "Bootstrap"],
       liveLink: "#",
-      githubLink: "#"
+      githubLink: "https://github.com/Tashini4/E-Commerce-Web-Application"
     },
     {
-      title: "Weather Dashboard",
-      description: "Interactive weather application with beautiful data visualization, location-based forecasts, and responsive design.",
-      category: "Web Development",
-      image: "/api/placeholder/400/250",
-      technologies: ["Vue.js", "Chart.js", "API Integration", "PWA"],
+      title: "Book Club Web Application",
+      description: "Book club web application built with React, TypeScript, MongoDB, Express, Node. Js , node mailer, provides a clean and user friendly interface. ",
+      category: "Web Application",
+      image: "/assets/book.png",
+      technologies: ["React", "MongoDB", "Node.js", "TypeScript","Tailwindcss","Express"],
       liveLink: "#",
-      githubLink: "#"
-    },
-    {
-      title: "Social Media Analytics",
-      description: "Comprehensive analytics dashboard for social media metrics with real-time data and customizable reports.",
-      category: "Full Stack",
-      image: "/api/placeholder/400/250",
-      technologies: ["Next.js", "Python", "PostgreSQL", "D3.js"],
-      liveLink: "#",
-      githubLink: "#"
+      githubLink: "https://github.com/Tashini4/library_frontend"
     },
     {
       title: "Mobile RecipeMate App",
       description: "Cross-platform fitness application with workout tracking, progress analytics, and community features.",
       category: "Mobile Development",
-      image: "../asseta/mobile.png",
+      image: "/assets/mobile.png",
       technologies: ["React Native", "Firebase", "Redux", "Expo"],
       liveLink: "#",
       githubLink: "#"
+    },
+     {
+      title: "Travel-Destination-Gallery",
+      description: "React travel Destination gallery website .tech stack github action and netlify",
+      category: "Web Development",
+      image: "/assets/travel.png",
+      technologies: ["React", "TypeScript", "Tailwind CSS"],
+      liveLink: "#",
+      githubLink: "https://github.com/Tashini4/Travel-Destination-Gallery"
     }
   ];
 
@@ -107,7 +107,7 @@ const Projects: React.FC = () => {
               {/* Project Image */}
               <div className="relative h-48 bg-gradient-to-br from-purple-500/20 to-blue-500/20 overflow-hidden">
                 <div className="w-full h-full bg-gray-700 flex items-center justify-center">
-                  <span className="text-gray-400 text-sm">Project Image</span>
+                  <img src={project.image} alt="project image" />
                 </div>
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                   <div className="flex gap-4">

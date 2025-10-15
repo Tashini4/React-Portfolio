@@ -24,7 +24,7 @@ const AboutPage: React.FC = () => {
                         {/* Square image frame like VISH screenshot */}
                         <div className="w-64 h-64 bg-gray-700/50 rounded-lg flex items-center justify-center mx-auto mb-4 border-2 border-purple-500/40 overflow-hidden shadow-lg">
                           <img 
-                            src="./src/assets/image.jpg" 
+                            src="./assets/image.jpg" 
                             alt="Tashini Madubhani Wijethunga"
                             className="w-full h-full object-cover"
                           />

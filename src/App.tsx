@@ -1,29 +1,38 @@
-import "./App.tsx";
-import { BrowserRouter as Router } from "react-router-dom";
-import Home from "./components/Home.tsx";
-import About from "./components/About.tsx";
-import Navbar from "./components/Navbar.tsx";
-import Service from "./components/Service.tsx";
+import React from 'react';
+import Navbar from './components/Navbar';
+import About from './pages/About';
+import Services from './pages/Service';
+import Projects from './pages/Project';
+import Contact from './pages/Contact';
+import Footer from './components/Footer';
+import Home from './pages/Home';
 
-import Project from "./components/Project.tsx";
-import Contact from "./components/Contact.tsx";
-import Footer from "./components/Footer.tsx";
-
-function App() {
+const App: React.FC = () => {
   return (
-    <Router>
-        <Navbar/>
-      <div>
-        <Home/>
-        <About/>
-        <Service/>
-        <Project/>
-        <Contact/>
-        <Footer/>
-      </div>
-    </Router>
-    
+    <div className="relative">
+      <Navbar />
+      <main>
+        <section id="home" className="section">
+          <Home />
+        </section>
+        <section id="about" className="section">
+          <About />
+        </section>
+        <section id="service" className="section">
+          <Services />
+        </section>
+        <section id="projects" className="section">
+          <Projects />
+        </section>
+        <section id="contact" className="section">
+          <Contact />
+        </section>
+         <section id="footer" className="section">
+          <Footer />
+        </section>
+      </main>
+    </div>
   );
-}
+};
 
 export default App;
