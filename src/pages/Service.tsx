@@ -92,20 +92,7 @@ const Services: React.FC = () => {
           ))}
         </div>
 
-        {/* CTA Section */}
-        <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-purple-900/20 via-pink-900/20 to-blue-900/20 rounded-2xl p-8 border border-gray-800">
-            <h2 className="text-3xl font-bold text-white mb-4">
-              Ready to start your project?
-            </h2>
-            <p className="text-gray-300 text-lg mb-6 max-w-2xl mx-auto">
-              Let's work together to bring your ideas to life with cutting-edge technology and stunning design.
-            </p>
-            <button className="px-8 py-3 bg-gradient-to-r from-purple-600 via-pink-500 to-blue-500 text-white font-semibold rounded-full hover:from-purple-700 hover:via-pink-600 hover:to-blue-600 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl shadow-lg">
-              Get In Touch
-            </button>
-          </div>
-        </div>
+        
       </div>
 
       {/* Background Animation Elements */}

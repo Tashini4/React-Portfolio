@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { FaGithub, FaLinkedin, FaFacebook, FaInstagram } from 'react-icons/fa';
+import { toast } from 'react-toastify';
+
+
 
 const Homepage: React.FC = () => {
   const [currentText, setCurrentText] = useState('');
@@ -7,6 +10,9 @@ const Homepage: React.FC = () => {
   const [currentRole, setCurrentRole] = useState(0);
   const [displayRole, setDisplayRole] = useState('');
   const [roleIndex, setRoleIndex] = useState(0);
+
+  
+  //const navigate = useNavigate();
   
   const fullText = "Hi, I'm Tashini Madubhani Wijethunga";
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -49,7 +55,39 @@ const Homepage: React.FC = () => {
     }
   }, [roleIndex, currentRole, currentIndex, roles]);
 
-   const socialIcons = [
+  // Handle Hire Me button click
+  const handleHireMeClick = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleDownloadCV = async () => {
+   
+    try {
+      const link = document.createElement('a');
+      link.href = './tashini.pdf';
+      link.download = 'Tashini_Madubhani_Wijethunga_CV.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      toast.success('Downloading CV...' , {
+        position: "bottom-right",
+        autoClose: 3000,
+      }) 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (error) {
+      toast.error('Failed to download CV. Please try again later.', {
+        position:'bottom-right',
+        autoClose: 3000,
+      })
+    }
+     
+  };
+
+  const socialIcons = [
     { icon: <FaGithub />, name: 'GitHub', href: 'https://github.com/Tashini4' },
     { icon: <FaLinkedin />, name: 'LinkedIn', href: 'https://www.linkedin.com/in/tashini-wijethunga-9474b02b2/' },
     { icon: <FaFacebook />, name: 'Facebook', href: 'https://www.facebook.com/share/1FkTevPvbU/' },
@@ -88,7 +126,7 @@ const Homepage: React.FC = () => {
 
       {/* Main Content */}
       <div className="relative z-10 flex items-center justify-center min-h-[calc(100vh-80px)]">
-        <div className="text-center px-6">
+        <div className="text-center px-6 ">
           {/* Animated Text */}
           <div className="mb-8">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4">
@@ -113,6 +151,8 @@ const Homepage: React.FC = () => {
               <a
                 key={index}
                 href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-white hover:text-purple-300 transition-all duration-300 transform hover:scale-110 hover:rotate-12"
               >
                 <div className="text-4xl md:text-5xl lg:text-6xl">
@@ -124,10 +164,15 @@ const Homepage: React.FC = () => {
 
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-            <button className="px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-500 text-white rounded-full font-semibold hover:from-purple-700 hover:to-blue-600 transition-all duration-300 transform hover:scale-105 text-lg md:text-xl">
+            <button onClick={handleDownloadCV} className="px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-500 text-white rounded-full font-semibold hover:from-purple-700 hover:to-blue-600 transition-all duration-300 transform hover:scale-105 text-lg md:text-xl" 
+            >
+
               Download CV
             </button>
-            <button className="px-8 py-3 bg-white text-purple-600 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 text-lg md:text-xl">
+            <button 
+              onClick={handleHireMeClick}
+              className="px-8 py-3 bg-white text-purple-600 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 text-lg md:text-xl"
+            >
               Hire Me
             </button>
           </div>
