@@ -11,6 +11,7 @@ const Homepage: React.FC = () => {
   const [particles, setParticles] = useState<Array<{x: number, y: number, size: number, speed: number, color: string}>>([]);
 
   const fullText = "Hi, I'm Tashini Madubhani Wijethunga";
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const roles = [
     "UI/UX Designer",
     "Web Developer", 
@@ -84,7 +85,7 @@ const Homepage: React.FC = () => {
   const handleDownloadCV = async () => {
     try {
       const link = document.createElement('a');
-      link.href = './Tashini Madubhani.pdf';
+      link.href = './assets/Tashini Madubhani(1).pdf';
       link.download = 'Tashini_Madubhani_Wijethunga_CV.pdf';
       document.body.appendChild(link);
       link.click();

@@ -31,6 +31,7 @@ const App: React.FC = () => {
           <Footer />
         </section>
       </main>
+
     </div>
   );
 };
