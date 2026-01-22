@@ -1,12 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaFigma, FaReact, FaHtml5, FaCss3Alt, FaNodeJs } from 'react-icons/fa';
-import { SiTypescript, SiTailwindcss, SiThree, SiMongodb } from 'react-icons/si';
+import { SiTypescript, SiTailwindcss, SiThreema, SiMongodb } from 'react-icons/si';
 
 const About: React.FC = () => {
   const technologies = [
     { icon: <FaReact />, name: "React" },
-    { icon: <SiThree />, name: "Three.js" },
+    { icon: <SiThreema />, name: "Three.js" },
     { icon: <SiTypescript />, name: "TypeScript" },
     { icon: <SiTailwindcss />, name: "Tailwind" },
     { icon: <FaNodeJs />, name: "Node.js" },
