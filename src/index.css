@@ -1,41 +1,43 @@
 @import "tailwindcss";
 
+@theme {
+  --color-accent: #ffffff;
+  --color-bg: #000000;
+  --color-text: #ffffff;
+  --font-sans: "Inter", sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-black text-white font-sans overflow-x-hidden selection:bg-white selection:text-black;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold tracking-tighter;
+  }
+}
+
 @layer utilities {
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
+  .text-stroke {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+    color: transparent;
   }
-  
-  .animate-float-delayed {
-    animation: float 7s ease-in-out 1s infinite;
-  }
-  
-  .animate-float-slow {
-    animation: float 8s ease-in-out 2s infinite;
-  }
-  
-  .animate-shine {
-    animation: shine 3s ease-in-out infinite;
-  }
-  
-  .animate-shine-delayed {
-    animation: shine 3s ease-in-out 1.5s infinite;
-  }
-}
 
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0) translateX(0);
+  .text-stroke-hover:hover {
+    -webkit-text-stroke: 0px;
+    color: white;
   }
-  50% {
-    transform: translateY(-20px) translateX(10px);
-  }
-}
 
-@keyframes shine {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
+  .glass-panel {
+    @apply bg-black/50 backdrop-blur-md border border-white/10;
   }
 }

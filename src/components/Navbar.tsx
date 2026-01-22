@@ -1,144 +1,91 @@
 import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Service', href: '#service' },
-    { name: 'Project', href: '#projects' },
-    { name: 'Contact', href: '#contact' },
-  ];
-
-  // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
-      // Navbar background on scroll
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-
-      // Active section detection
-      const sections = ['home', 'about', 'services', 'projects', 'contact'];
-      const scrollY = window.scrollY + 100;
-
-      sections.forEach(section => {
-        const element = document.getElementById(section);
-        if (element) {
-          const offsetTop = element.offsetTop;
-          const offsetHeight = element.offsetHeight;
-          
-          if (scrollY >= offsetTop && scrollY < offsetTop + offsetHeight) {
-            setActiveSection(section);
-          }
-        }
-      });
+      setScrolled(window.scrollY > 50);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
+  const navItems = [
+    { name: 'Home', href: '#home' },
+    { name: 'About', href: '#about' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'Contact', href: '#contact' },
+  ];
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id.replace('#', ''));
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
       setIsMenuOpen(false);
     }
   };
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-black/90 backdrop-blur-md border-b border-gray-800' : 'bg-transparent'
-    }`}>
-      <div className="container mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <div className="text-3xl font-bold bg-gradient-to-r from-purple-600 via-pink-500 to-blue-500 bg-clip-text text-transparent">
-            Tashi
+    <>
+      <nav className={`fixed top-4 left-0 right-0 z-50 flex justify-center transition-all duration-300 ${scrolled ? 'py-2' : 'py-4'}`}>
+        <div className="bg-black/80 backdrop-blur-md border border-white/20 rounded-full px-6 py-3 flex items-center gap-8 shadow-2xl">
+          <div className="text-xl font-bold tracking-tighter text-white cursor-pointer" onClick={() => scrollToSection('home')}>
+            TASHI
           </div>
 
-          {/* Desktop Navigation Links */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex items-center gap-6">
             {navItems.map((item) => (
               <button
                 key={item.name}
-                onClick={() => scrollToSection(item.href.substring(1))}
-                className={`transition-colors duration-300 font-medium ${
-                  activeSection === item.href.substring(1)
-                    ? 'text-purple-400'
-                    : 'text-white hover:text-purple-400'
-                }`}
+                onClick={() => scrollToSection(item.href)}
+                className="text-sm font-medium text-gray-400 hover:text-white transition-colors uppercase tracking-widest"
               >
                 {item.name}
               </button>
             ))}
           </div>
 
-          {/* Desktop Contact Me Button */}
-          <button 
-            onClick={() => scrollToSection('contact')}
-            className="hidden md:block px-6 py-2 rounded-full text-white font-medium bg-gradient-to-r from-purple-600 via-pink-500 to-blue-500 hover:from-purple-700 hover:via-pink-600 hover:to-blue-600 transition-all duration-300 transform hover:scale-105"
-          >
-            Contact Me
-          </button>
-
-          {/* Mobile Menu Button */}
           <button
-            onClick={toggleMenu}
-            className="md:hidden text-white p-2 rounded-lg hover:bg-gray-800 transition-colors"
-            aria-label="Toggle menu"
+            className="md:hidden text-white"
+            onClick={() => setIsMenuOpen(true)}
           >
-            {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+            <FaBars />
           </button>
         </div>
+      </nav>
 
-        {/* Mobile Menu */}
-        <div className={`md:hidden transition-all duration-300 overflow-hidden ${
-          isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-        }`}>
-          <div className="py-4 space-y-4">
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            className="fixed inset-0 z-[60] bg-black flex flex-col items-center justify-center space-y-8"
+          >
+            <button
+              className="absolute top-8 right-8 text-white text-2xl"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <FaTimes />
+            </button>
+
             {navItems.map((item) => (
               <button
                 key={item.name}
-                onClick={() => scrollToSection(item.href.substring(1))}
-                className={`block w-full text-left px-4 py-3 rounded-lg transition-all duration-300 font-medium ${
-                  activeSection === item.href.substring(1)
-                    ? 'bg-purple-600 text-white'
-                    : 'text-white hover:bg-gray-800'
-                }`}
+                onClick={() => scrollToSection(item.href)}
+                className="text-3xl font-bold text-transparent text-stroke hover:text-white transition-all duration-300 uppercase tracking-tighter"
               >
                 {item.name}
               </button>
             ))}
-            <button 
-              onClick={() => scrollToSection('contact')}
-              className="w-full px-4 py-3 rounded-full text-white font-medium bg-gradient-to-r from-purple-600 via-pink-500 to-blue-500 hover:from-purple-700 hover:via-pink-600 hover:to-blue-600 transition-all duration-300"
-            >
-              Contact Me
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Overlay for mobile menu */}
-      {isMenuOpen && (
-        <div 
-          className="fixed inset-0 bg-black/50 z-40 md:hidden"
-          onClick={() => setIsMenuOpen(false)}
-        />
-      )}
-    </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 
