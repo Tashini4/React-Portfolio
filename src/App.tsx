@@ -5,6 +5,7 @@ import About from './pages/About';
 import Projects from './pages/Project';
 import Contact from './pages/Contact';
 import Canvas3D from './components/Canvas3D';
+import Footer from './components/Footer';
 
 const App: React.FC = () => {
   return (
@@ -26,6 +27,10 @@ const App: React.FC = () => {
         <section id="contact">
           <Contact />
         </section>
+        <section id="footer">
+          <Footer />
+        </section>
+
       </main>
     </div>
   );
