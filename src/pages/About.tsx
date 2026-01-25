@@ -63,11 +63,10 @@ const About: React.FC = () => {
             className="space-y-8 text-lg font-light text-gray-300 leading-relaxed border-l-2 border-white/20 pl-8 mb-16"
           >
             <p>
-              I'm Tashini Madubhani Wijethunga, a 23-year-old software engineer based in Sri Lanka. I don't just write code; I architect digital experiences that leave a lasting impression.
+                I'm a 23-year-old Software Engineering undergraduate at IJSE, Sri Lanka. I'm passionate about technology and design, with a strong interest in web development, UI/UX design, and frontend development. I love creating modern, user-friendly, and visually appealing digital experiences that combine creativity with functionality. 
+                I'm continuously learning and improving my skills to build innovative solutions that make a positive impact.
             </p>
-            <p>
-              My journey is defined by a relentless pursuit of pixel perfection and performance. Whether it's a 3D interactive web app or a robust backend system, I bring a unique blend of creativity and engineering rigor to every project.
-            </p>
+            
           </motion.div>
 
           <div className="mb-12">

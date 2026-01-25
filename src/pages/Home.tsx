@@ -38,7 +38,7 @@ const Home: React.FC = () => {
           <span className="text-transparent text-stroke">MADUBHANI</span>
         </h1>
         <p className="text-gray-300 text-lg md:text-xl max-w-lg mb-8 leading-relaxed border-l-2 border-white pl-6">
-          A creative developer crafting immersive 3D web experiences and pixel-perfect interfaces.
+          I'm a Frontend Developer
         </p>
 
         <div className="flex gap-6 mb-12">
